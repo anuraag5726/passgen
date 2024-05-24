@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>excercise</title>
+    </head>
+    <body>
+       <h1>friends birthday countdown</h1>
+       <p>enter your friends dob</p>
+       <input type="date" id="birth">
+       <button onclick="check()">check</button>
+       <p id="result"></p>
+        <script>
+         
+          function check(){
+         var birthdate=new Date(document.getElementById("birth").value);
+         var today= new Date();
+         var diff=birthdate.getTime()-today.getTime();
+         var sec=Math.floor(diff/1000%60);
+         var min=Math.floor(diff/1000/60%60);
+         var hrs=Math.floor(diff/1000/60/60);
+         var days=Math.round(hrs/24)-1;
+         document.getElementById("result").innerHTML=sec+"sec"+min+"min"+hrs+"hrs"+days+"days";
+          }
+        </script>
+    </body>
+</html>
